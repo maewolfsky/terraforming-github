@@ -1,0 +1,8 @@
+<% repositories.each do |repository| -%>
+<%- options = options_of(repository) -%>
+resource "github_repository" "<%= resource_name_of(repository) %>" {
+    name               = "<%= repository["name"] %>"
+    type               = "<%= repository["type"] %>"
+}
+
+<% end -%>
